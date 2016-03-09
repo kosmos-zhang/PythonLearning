@@ -21,12 +21,12 @@ from utils.service import InitDataService
 
 class AccMgrApp():
     def Run(self):
-        pwdDlg = LoginWindow()
-        result = pwdDlg.Logon
-        
-        if result:
-            mainWin = MainWindow()
-            mainWin.Show()
+        login = LoginWindow();
+        login.mainloop()
+
+        if login.Logon:
+            main = MainWindow()
+            main.mainloop()
             return True
         else:
             return False
