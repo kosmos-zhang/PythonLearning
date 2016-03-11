@@ -121,6 +121,15 @@ class MainWindow(AccWindows):
         panedWindow.pack(fill=tk.BOTH, expand=1)
 
         left = tk.Canvas(panedWindow, bg='#0000FF', width=150)
+        listbox = tk.Listbox(left)
+        scrollbar = tk.Scrollbar(left)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y) # side 指定Scrollbar 为居右；fill 指定填充满整个剩余区域
+        listbox['yscrollcommand'] = scrollbar.set    # 这句是关键：指定Listbox 的yscrollbar 的事件处理函数为Scrollbar 的set
+        for item in ['python','tkinter','widget']:
+            listbox.insert(tk.END, item)
+        listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
+        scrollbar['command'] = listbox.yview         # 这句是关键：指定Scrollbar 的command 的事件处理函数是Listbar 的yview
+
         panedWindow.add(left)
 
         right = tk.Label(panedWindow, text='Right pane', bg='#FF0000')
