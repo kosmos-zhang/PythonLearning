@@ -12,14 +12,14 @@ class Pig(pathinfo.PathInfo):
     """Container for a PathInfo object, and a path
     """
     def __cmp__ ( self, other ):
-        compare  =  - cmp ( self.size(), other.size() )
+        compare  =  - cmp ( self.size, other.size )
         if compare != 0:
             return compare
         else:
             return cmp ( self.path, other.path )
 
     def __str__ ( self ):
-        return "%s %10s %s" % ( self._modTime(), self.size(), self.path )
+        return "%s %10s %s" % ( self.modTime(), self.size, self.path )
 
 #--
 # Procedures for pigfiles.py

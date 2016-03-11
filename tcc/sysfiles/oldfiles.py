@@ -13,15 +13,15 @@ class Old(pathinfo.PathInfo):
     """Container for a PathInfo object, and a path
     """
     def __cmp__ ( self, other ):
-        compare  =  - cmp ( self.stat[stat.ST_MTIME],
-                            other.stat[stat.ST_MTIME] )
+        compare  =  - cmp ( self.status[stat.ST_MTIME],
+                            other.status[stat.ST_MTIME] )
         if compare != 0:
             return compare
         else:
             return cmp ( self.path, other.path )
 
     def __str__ ( self ):
-        return "%s %10s %s" % ( self._modTime(), self.size(), self.path )
+        return "%s %10s %s" % ( self.modTime(), self.size, self.path )
 
 #--
 # Procedures for oldfiles.py
