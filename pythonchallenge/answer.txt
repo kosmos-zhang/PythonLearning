@@ -154,7 +154,7 @@ smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 11
 >>> bz2.decompress('BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08')
 'file'
 
-9. http://www.pythonchallenge.com/pc/return/good.html:huge:file
+9. http://huge:file@www.pythonchallenge.com/pc/return/good.html
 >>> import Image, os, ImageDraw
 >>> def crtimg(f="out.png",ps=()):
 ...     if os.path.isfile(f):
@@ -166,3 +166,120 @@ smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 11
 ...         a.line(((ps[i*2], ps[i*2+1]), (ps[i*2+2], ps[i*2+3])),fill=(0,0,0))
 ...     im.save(f)
 ...
+
+10. http://huge:file@www.pythonchallenge.com/pc/return/bull.html
+a = [1, 11, 21, 1211, 111221, ...
+a = [1, 11, 21, 1211, 111221, 312211,13112221,1113213211,...
+    '1'*1, '1'*2, '2'*1+'1'*1,'1'*1+'2'*1+'1'*2,...   字符编码功能实现
+>>> def describ(s):
+...     cs=[]
+...     c=''
+...     cc=0
+...     for i in range(0, len(s)):
+...         if c==s[i]: cc+=1
+...         else:
+...             if cc>0:
+...                 cs.append(str(cc)+c)
+...             cc = 1
+...             c=s[i]
+...     if cc>0:
+...         cs.append(str(cc)+c)
+...     return "".join(cs)
+...
+>>> s='1'
+>>> for i in range(0, 30):
+...     s=describ(s)
+...
+>>> print len(s)
+5808
+>>> import re
+>>> def describe(s):
+...     return "".join([str(len(m.group(0))) + m.group(1) for m in re.finditer(r"(\d)\1*", s)])
+...
+
+11. http://huge:file@www.pythonchallenge.com/pc/return/5808.html
+>>> import Image
+>>> im=Image.open('cave.jpg')
+>>> print im.size
+(640, 480)
+>>> im1=Image.new(im.mode, (320, 240))
+>>> im2=Image.new(im.mode, (320, 240))
+>>> for x in range(640):
+...     for y in range(480):
+...             if x%2==0 and y%2==0:
+...                     im1.putpixel((x//2,y//2), im.getpixel((x,y)))
+...             else:
+...                     im2.putpixel((x//2,y//2), im.getpixel((x,y)))
+...
+>>> im1.show()
+>>> im2.show()
+
+12. http://huge:file@www.pythonchallenge.com/pc/return/evil.html
+>>> s=open('evil2.gfx', 'rb').read()
+>>> for i in range(5):
+...     open("evil"+str(i)+".jpg",'wb').write(s[i::5])
+...
+
+13. http://huge:file@www.pythonchallenge.com/pc/return/disproportional.html
+>>> import xmlrpclib
+>>> url = 'http://www.pythonchallenge.com/pc/phonebook.php'
+>>> phonebook = xmlrpclib.Server(url)
+>>> print phonebook.system.listMethods()
+['phone', 'system.listMethods', 'system.methodHelp', 'system.methodSignature', 'system.multicall', 'system.getCapabilities']
+>>> print phonebook.system.methodHelp('phone')
+Returns the phone of a person
+>>> print phonebook.system.methodSignature('phone')
+[['string', 'string']]
+>>> phonebook.phone('Bert')
+'555-ITALY'
+
+14. http://huge:file@www.pythonchallenge.com/pc/return/italy.html
+<!-- remember: 100*100 = (100+99+99+98) + (...  -->
+>>> import Image
+>>> im=Image.open('wire.png')
+>>> print im.size
+(10000,1)
+>>> im1=Image.new(im.mode, (100, 100))
+>>> t, l, b, r = 0, 0, 99, 99
+>>> x,y=0,0
+>>> ix,iy=1,0
+>>> for i in xrange(10000):
+...     im1.putpixel((x,y), im.getpixel((i,0)))
+...     if ix==1 and x==r: ix,iy,t=0,1,t+1
+...     elif iy==1 and y==b: ix,iy,r=-1,0,r-1
+...     elif ix==-1 and x==l: ix,iy,b=0,-1,b-1
+...     elif iy==-1 and y==t: ix,iy,l=1,0,l+1
+...     x,y=x+ix,y+iy
+...
+>>> im1.save('wire1.png')
+
+http://www.pythonchallenge.com/pc/return/cat.html
+and its name is uzi. you'll hear from him later. 
+
+15. http://huge:file@www.pythonchallenge.com/pc/return/uzi.html
+>>> for i in range(1006, 2000, 10):
+...     if datetime.datetime(i, 1, 26).weekday()==0 and i%4==0:
+...             print i
+...
+1176
+1356
+1576
+1756
+1976
+>>>
+1756年1月27日(乙亥年腊月廿六)，奥地利音乐大师莫扎特诞生。
+
+16. http://huge:file@www.pythonchallenge.com/pc/return/mozart.html
+>>> import Image
+>>> im=Image.open('mozart.gif')
+>>> im1=im.copy()
+>>> w,h=im.size
+>>> for y in range(h):
+...     line=[im.getpixel((x, y)) for x in range(w)]
+...     pink=line.index(195)
+...     line=line[pink:]+line[:pink]
+...     for i in range(w): im1.putpixel((i, y), line[i])
+...
+>>> im1.save('out.gif')
+
+17. http://huge:file@www.pythonchallenge.com/pc/return/romance.html
