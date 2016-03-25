@@ -1,4 +1,4 @@
-# 《Python基础教程》(第二版)项目代码
+# Python学习相关内容及代码
 
 《Python基础教程》(第二版)项目代码
 - 1. 即时标记(markup)：该项目主要是对纯文本文件添加一些HTML标记，将文件转换为HTML文件，在网页端能比较方便清晰的看清楚里面的信息。
@@ -10,3 +10,9 @@
 - 7. 自定义电子公告板(dashboard)：使用CGI和MySQL实现电子公告板功能。（书本使用PostgreSQL实现。）
 - 8. 使用XML-RPC进行文件共享(xmlrpc)：项目创建一个P2P文件共享程序。
 - 9. DIY街机游戏(pygame)：使用Pygame编写一个全屏街机游戏。
+
+Python Challenge解谜过程
+- 解谜详细过程(pythonchallenge)：详细介绍该项目的基本内容及题目详细解谜过程。
+
+密码管理
+- 账户密码管理(accountmanager)：自己根据实际实现的几个小工具，主要用于管理个人账户及密码。

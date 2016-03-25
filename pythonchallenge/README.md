@@ -1,9 +1,12 @@
+# Python challenge解谜相信过程。
 
-0. http://www.pythonchallenge.com/pc/def/0.html
+项目主页在 http://www.pythonchallenge.com/，用于通过解谜的过程帮助学习巩固Python知识。
+
+- 0. http://www.pythonchallenge.com/pc/def/0.html
 >>> print 2**38
 274877906944
 
-1. http://www.pythonchallenge.com/pc/def/274877906944.html
+- 1. http://www.pythonchallenge.com/pc/def/274877906944.html
 http://www.pythonchallenge.com/pc/def/map.html
 >>> import string
 >>> intab='abcdefghijklmnopqrstuvwxyz'   #string.lowercase
@@ -16,7 +19,7 @@ i hope you didnt translate it by hand. thats what computers are for. doing it in
 >>> print str.translate(transtab)
 ocr
 
-2. http://www.pythonchallenge.com/pc/def/ocr.html
+- 2. http://www.pythonchallenge.com/pc/def/ocr.html
 >>> import string
 >>> txt=open('ocr.txt').read()                        
 >>> filter(lambda x:x in string.letters, txt)         
@@ -30,7 +33,7 @@ ocr
 >>> print ''.join([c for c in s if OCCURRENCES[c] < avgOC])
 equality
 
-3. http://www.pythonchallenge.com/pc/def/equality.html
+- 3. http://www.pythonchallenge.com/pc/def/equality.html
 xXXXcXXXx
 >>> import string
 >>> f=open('equality.txt')
@@ -56,7 +59,7 @@ linkedlist
 >>> print ''.join(x[1] for x in re.findall('(^|[^A-Z])[A-Z]{3}([a-z])[A-Z]{3}([^A-Z]|$)', txt))
 linkedlist
 
-4. http://www.pythonchallenge.com/pc/def/linkedlist.php
+- 4. http://www.pythonchallenge.com/pc/def/linkedlist.php
 #由于网络不是很正常，所以使用函数，这样出现问题之后可以从断点继续
 >>> import urllib
 >>> def getnoth(ind=0, nothing='12345'):
@@ -70,7 +73,7 @@ linkedlist
 ...                                                                   
 >>> getnoth()
 
-5. http://www.pythonchallenge.com/pc/def/peak.html
+- 5. http://www.pythonchallenge.com/pc/def/peak.html
 >>> import cPickle as pickle
 >>> str=load('banner.p').load()
 >>> t=pickle.loads(str)
@@ -101,7 +104,7 @@ linkedlist
    ###    ##   ####     ####   ###########   ####     ####  ####     ####    ###    ##    ####
       ###     ######    #####    ##    #### ######    ###########    #####      ###      ######
 
-6. http://www.pythonchallenge.com/pc/def/channel.html
+- 6. http://www.pythonchallenge.com/pc/def/channel.html
 download file http://www.pythonchallenge.com/pc/def/channel.zip, ang read readme.txt
 >>> import zipfile
 >>> z=zipfile.ZipFile('channel.zip')
@@ -135,7 +138,7 @@ download file http://www.pythonchallenge.com/pc/def/channel.zip, ang read readme
 **************************************************************** 
  **************************************************************  
 
-7. http://www.pythonchallenge.com/pc/def/oxygen.html
+- 7. http://www.pythonchallenge.com/pc/def/oxygen.html
 >>> import Image
 >>> im=Image.open('oxygen.png')
 >>> print im.size
@@ -147,14 +150,14 @@ smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 11
 >>> "".join(map(chr,[105, 110, 116, 101, 103, 114, 105, 116, 121]))
 'integrity'
 
-8. http://www.pythonchallenge.com/pc/def/integrity.html
+- 8. http://www.pythonchallenge.com/pc/def/integrity.html
 >>> import bz2                                                                                           
 >>> bz2.decompress('BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084')
 'huge'
 >>> bz2.decompress('BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08')
 'file'
 
-9. http://huge:file@www.pythonchallenge.com/pc/return/good.html
+- 9. http://huge:file@www.pythonchallenge.com/pc/return/good.html
 >>> import Image, os, ImageDraw
 >>> def crtimg(f="out.png",ps=()):
 ...     if os.path.isfile(f):
@@ -167,7 +170,7 @@ smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 11
 ...     im.save(f)
 ...
 
-10. http://huge:file@www.pythonchallenge.com/pc/return/bull.html
+- 10. http://huge:file@www.pythonchallenge.com/pc/return/bull.html
 a = [1, 11, 21, 1211, 111221, ...
 a = [1, 11, 21, 1211, 111221, 312211,13112221,1113213211,...
     '1'*1, '1'*2, '2'*1+'1'*1,'1'*1+'2'*1+'1'*2,...   字符编码功能实现
@@ -197,7 +200,7 @@ a = [1, 11, 21, 1211, 111221, 312211,13112221,1113213211,...
 ...     return "".join([str(len(m.group(0))) + m.group(1) for m in re.finditer(r"(\d)\1*", s)])
 ...
 
-11. http://huge:file@www.pythonchallenge.com/pc/return/5808.html
+- 11. http://huge:file@www.pythonchallenge.com/pc/return/5808.html
 >>> import Image
 >>> im=Image.open('cave.jpg')
 >>> print im.size
@@ -214,13 +217,13 @@ a = [1, 11, 21, 1211, 111221, 312211,13112221,1113213211,...
 >>> im1.show()
 >>> im2.show()
 
-12. http://huge:file@www.pythonchallenge.com/pc/return/evil.html
+- 12. http://huge:file@www.pythonchallenge.com/pc/return/evil.html
 >>> s=open('evil2.gfx', 'rb').read()
 >>> for i in range(5):
 ...     open("evil"+str(i)+".jpg",'wb').write(s[i::5])
 ...
 
-13. http://huge:file@www.pythonchallenge.com/pc/return/disproportional.html
+- 13. http://huge:file@www.pythonchallenge.com/pc/return/disproportional.html
 >>> import xmlrpclib
 >>> url = 'http://www.pythonchallenge.com/pc/phonebook.php'
 >>> phonebook = xmlrpclib.Server(url)
@@ -233,7 +236,7 @@ Returns the phone of a person
 >>> phonebook.phone('Bert')
 '555-ITALY'
 
-14. http://huge:file@www.pythonchallenge.com/pc/return/italy.html
+- 14. http://huge:file@www.pythonchallenge.com/pc/return/italy.html
 <!-- remember: 100*100 = (100+99+99+98) + (...  -->
 >>> import Image
 >>> im=Image.open('wire.png')
@@ -256,7 +259,7 @@ Returns the phone of a person
 http://www.pythonchallenge.com/pc/return/cat.html
 and its name is uzi. you'll hear from him later. 
 
-15. http://huge:file@www.pythonchallenge.com/pc/return/uzi.html
+- 15. http://huge:file@www.pythonchallenge.com/pc/return/uzi.html
 >>> for i in range(1006, 2000, 10):
 ...     if datetime.datetime(i, 1, 26).weekday()==0 and i%4==0:
 ...             print i
@@ -269,7 +272,7 @@ and its name is uzi. you'll hear from him later.
 >>>
 1756年1月27日(乙亥年腊月廿六)，奥地利音乐大师莫扎特诞生。
 
-16. http://huge:file@www.pythonchallenge.com/pc/return/mozart.html
+- 16. http://huge:file@www.pythonchallenge.com/pc/return/mozart.html
 >>> import Image
 >>> im=Image.open('mozart.gif')
 >>> im1=im.copy()
@@ -282,4 +285,4 @@ and its name is uzi. you'll hear from him later.
 ...
 >>> im1.save('out.gif')
 
-17. http://huge:file@www.pythonchallenge.com/pc/return/romance.html
+- 17. http://huge:file@www.pythonchallenge.com/pc/return/romance.html
