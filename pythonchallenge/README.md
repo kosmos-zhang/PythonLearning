@@ -15,7 +15,8 @@ Keep the scripts you write - they might become useful.
 
 谜题及相关解谜过程
 -----------------------------------
-- 0. [http://www.pythonchallenge.com/pc/def/0.html](http://www.pythonchallenge.com/pc/def/0.html)
+- 谜题0. [http://www.pythonchallenge.com/pc/def/0.html](http://www.pythonchallenge.com/pc/def/0.html)
+
     >>> print 2**38
     274877906944
 
