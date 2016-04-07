@@ -300,3 +300,59 @@ Keep the scripts you write - they might become useful.
     >>> im1.save('out.gif')
 
 - 17. http://huge:file@www.pythonchallenge.com/pc/return/romance.html
+    根据左下角的linkedlist，打开http://www.pythonchallenge.com/pc/def/linkedlist.php，打开浏览器的debug，查看cookie，有提示说you+should+have+followed+busynothing...,所以使用http://www.pythonchallenge.com/pc/def/linkedlist.php?busynothing进行遍历，将cookie中的info值取出来。然后根据提示，从phonebook中查找号码并发送消息。
+    >>> import urllib2, cookielib, bz2
+    >>> from urllib import quote_plus, unquote_plus
+    >>> def getnoth(ind=0, busynothing='12345'):
+    ...     result=[]
+    ...     cj=cookielib.CookieJar()
+    ...     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj),urllib2.HTTPHandler())
+    ...     url='http://www.pythonchallenge.com/pc/def/linkedlist.php?busynothing='
+    ...     while True:
+    ...         req=urllib2.Request(url+busynothing)
+    ...         resp=opener.open(req)
+    ...         line=resp.read()
+    ...         busynothing=line.split(' ')[-1]
+    ...         ind += 1
+    ...         for cookie in cj:
+    ...             result.append(cookie.value)
+    ...         try:
+    ...             i = int(busynothing)
+    ...         except ValueError, e:
+    ...             break
+    ...         print ind,':',busynothing
+    ...     return ''.join(result)
+    ...
+    >>> result=getnoth()
+    >>> bz2.decompress(unquote_plus(result))
+    is it the 26th already? call his father and inform him that "the flowers are on their way". he'll understand.
+    >>> import xmlrpclib
+    >>> x= xmlrpclib.ServerProxy("http://www.pythonchallenge.com/pc/phonebook.php")
+    >>> number = x.phone("Leopold")
+    >>> print number
+    555-VIOLIN
+    >>> o = urllib2.build_opener()
+    >>> message = "the flowers are on their way"
+    >>> o.addheaders.append(('Cookie', 'info='+quote_plus(message)))
+    >>> res = o.open("http://www.pythonchallenge.com/pc/stuff/violin.php")
+    >>> print res.read()
+    <html>
+    <head>
+      <title>it's me. what do you want?</title>
+      <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+            <br><br>
+            <center><font color="gold">
+            <img src="leopold.jpg" border="0"/>
+    <br><br>
+    oh well, don't you dare to forget the balloons.</font>
+    </body>
+    </html>
+
+- 18. http://huge:file@www.pythonchallenge.com/pc/return/balloons.html
+    www.pythonchallenge.com/pc/return/brightness.html
+    tips:  maybe consider deltas.gz, so download this file, there's a txt file named delta.txt in it
+
+
+- 19. http://butter:fly@www.pythonchallenge.com/pc/hex/bin.html
